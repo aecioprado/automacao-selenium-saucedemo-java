@@ -20,6 +20,9 @@ public class HomePage {
 
 	private By botaoMenu = By.id("react-burger-menu-btn");
 	
+	private By menuDropDownFiltro = By.cssSelector("select.product_sort_container");
+	
+	
 
 	List<WebElement> listaProdutos = new ArrayList<>();
 
@@ -55,6 +58,11 @@ public class HomePage {
 
 	public String obterUrlPaginaLogin() {
 		return driver.getCurrentUrl();
+		
+	}
+	
+	public void clicarMenuDropDown(String opcao) {
+		driver.findElement(menuDropDownFiltro).sendKeys(opcao);
 		
 	}
 

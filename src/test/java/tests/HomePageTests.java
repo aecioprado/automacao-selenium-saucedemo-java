@@ -13,6 +13,10 @@ import pages.LoginPage;
 
 public class HomePageTests extends BaseTests {
 	
+	@Test
+	public void testAcessarUrlInventory_deveNegarAcessoSemLogin() {
+		
+	}
 	
 	@Test
 	public void testContarProdutos_deveContarSeisProdutosDiferentes() {
@@ -39,6 +43,14 @@ public class HomePageTests extends BaseTests {
 		String url = homePage.obterUrlPaginaLogin();
 		Assertions.assertEquals("https://www.saucedemo.com/",url);
 			
+	}
+	
+	@Test
+	public void testClicarMenuDropDown_deveClicarOpcaoNameAtoZ() {
+		LoginPage loginPage = new LoginPage(driver);
+		HomePage homePage = loginPage.fazerLogin();
+		homePage.clicarMenuDropDown("");
+		
 	}
 }
  
